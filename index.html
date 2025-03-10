@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <button class="tablink" onclick="openPage('Home', this, 'rgb(245, 121, 121)')">Home</button>
+        <button class="tablink" onclick="openPage('News', this, 'rgb(92, 218, 92)')" id="defaultOpen">News</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'rgb(101, 206, 233)')">Contact</button>
+        <button class="tablink" onclick="openPage('About', this, 'rgb(238, 188, 96)')">About</button>
+
+        <div id="Home" class="tabcontent">
+            <h3>Home</h3>
+            <p>Home is where the heart is..</p>
+            <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione adipisci atque voluptatum laboriosam tempora quae, distinctio dicta, aut dolore exercitationem nam non. Ipsa eligendi blanditiis fugit ex amet velit eum!</a>
+        </div>
+
+        <div id="News" class="tabcontent">
+            <h3>News</h3>
+            <p>Some news this fine day!</p>
+            <a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam aspernatur reprehenderit accusamus quidem deserunt ipsum architecto aut, nemo cumque quasi error velit numquam totam autem. Perferendis expedita alias ullam similique.</a>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+            <h3>Contact</h3>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+            <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quaerat officiis. Dolore nobis rerum, ut tempore aliquam amet minima exercitationem ad, quaerat officiis quibusdam sapiente quo, aperiam tempora necessitatibus magnam.</a>
+        </div>
+
+        <div id="About" class="tabcontent">
+            <h3>About</h3>
+            <p>Who we are and what we do.</p>
+            <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, itaque. Voluptatem quia quae adipisci sit numquam molestias, excepturi, quos laboriosam repellendus et nesciunt cumque ab doloremque ea voluptates recusandae ipsum.</a>
+        </div>
+    </body>
+    <script>
+        function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        }
+
+         tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+        }
+
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+</html>
